@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body, html { font-size: 15px; }
+        body{
+            background: url('../../static/image/1.jpg');
+            background-repeat:no-repeat;
+            background-size:1000px 700px;
+            background-color: #ccc;
+            background-position:50% 0%;
+            background-attachment :scroll;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.4);
+            height: 120%;
+            width:100%;
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+        .city {
+            position:absolute;
+            border: none;
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+            background:transparent;
+        }
+        .city:hover{
+            color:#fd79a8;
+        }
+        #city1 {
+            left: 800px;
+            top: 330px;
+        }
+        #city2 {
+            left: 880px;
+            top: 480px;
+        }
+        #city3 {
+            left: 750px;
+            top: 350px;
+        }
+        #city4 {
+            left: 740px;
+            top: 365px;
+        }
+        #city5 {
+            left: 900px;
+            top: 300px;
+        }
+        #city6 {
+            left: 850px;
+            top: 365px;
+        }
+        #city7 {
+            left: 950px;
+            top: 250px;
+        }
+        #city8 {
+            left: 970px;
+            top: 220px;
+        }
+        #city9 {
+            left: 750px;
+            top: 380px;
+        }
+        #city10 {
+            left: 670px;
+            top: 470px;
+        }
+        #city11 {
+            left: 850px;
+            top: 450px;
+        }
+         #city12 {
+            left: 860px;
+            top: 470px;
+        }
+        #city13 {
+            left: 750px;
+            top: 300px;
+        }
+        #city14 {
+            left: 850px;
+            top: 490px;
+        }
+        #city15 {
+            left: 880px;
+            top: 495px;
+        }
+        #city16 {
+            left: 890px;
+            top: 320px;
+        }
+        #city17 {
+            left: 820px;
+            top: 460px;
+        }
+        #city18 {
+            left: 810px;
+            top: 448px;
+        }
+        #city19 {
+            left: 840px;
+            top: 550px;
+        }
+        #city20 {
+            left: 825px;
+            top: 560px;
+        }
+        #city21 {
+            left: 810px;
+            top: 485px;
+        }
+        #city22 {
+            left: 770px;
+            top: 395px;
+        }
+        #city23 {
+            left: 795px;
+            top: 500px;
+        }
+        #city24 {
+            left: 815px;
+            top: 370px;
+        }
+        #city25 {
+            left: 820px;
+            top: 385px;
+        }
+        #city26 {
+            left: 880px;
+            top: 375px;
+        }
+        #city27 {
+            left: 780px;
+            top: 465px;
+        }
+        #city28 {
+            left: 755px;
+            top: 490px;
+        }
+        #city29 {
+            left: 735px;
+            top: 460px;
+        }
+        #city30 {
+            left: 760px;
+            top: 560px;
+        }
+        #city31 {
+            left: 790px;
+            top: 565px;
+        }
+        #city32 {
+            left: 675px;
+            top: 560px;
+        }
+        #city33 {
+            left: 710px;
+            top: 600px;
+        }
+        #city34 {
+            left: 625px;
+            top: 455px;
+        }
+        #city35 {
+            left: 660px;
+            top: 430px;
+        }
+        #city36 {
+            left: 638px;
+            top: 442px;
+        }
+        #city37 {
+            left: 650px;
+            top: 522px;
+        }
+        #city38 {
+            left: 600px;
+            top: 532px;
+        }
+        #city39 {
+            left: 460px;
+            top: 472px;
+        }
+        #city40 {
+            left: 410px;
+            top: 482px;
+        }
+        #city41 {
+            left: 695px;
+            top: 410px;
+        }
+        #city42 {
+            left: 685px;
+            top: 422px;
+        }
+        #city43 {
+            left: 625px;
+            top: 372px;
+        }
+        #city44 {
+            left: 590px;
+            top: 378px;
+        }
+        #city45 {
+            left: 660px;
+            top: 338px;
+        }
+        #city46 {
+            left: 330px;
+            top: 258px;
+        }
+        .div {
+            width: 440px;
+            height: auto;
+            position: relative;
+            font-size: 14px;
+            background-color: #fab1a0;
+            margin: 50% auto;
+            transform:translate(0 ,-50%);
+        }
+        h3 {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            color:#dfe4ea;
+           /* font-weight: 200;*/
+        }
+        .kindContainer {
+            display: flex;
+            flex-direction: column;
+        }
+        .kindCon {
+            border-top: 1px dashed rgba(255,255,255,.3);
+        }
+        .kindCon:nth-child(1) {border: none; margin-top: 18px; }
+        .kind {
+            font-weight: bold;
+            margin-left: 1%;
+            letter-spacing: 2px;
+            color: #006266;
+            font-size:16px;
+            font-family: monospace;
+        }
+        .kindNote {
+            padding: 10px;
+        }
+        .bottom{
+            position:absolute;
+            bottom: -250px;
+            left: 50%;
+            transform:translate(-50%,0);
+        }
+        .detail{
+            position:absolute;
+            top: 0;
+            right:0;
+            width: 40px;
+            height: 120%;
+            background-color: black;
+            color: #fff;
+            transition: 1s;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .detail:hover {
+            width: 80px;
+            cursor: pointer;
+        }
+        .text {
+            position: absolute;
+            width: 20px;
+            word-warp: break-word;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            cursor: pointer;
+        }
+        .img1{
+            width:180px;
+            height:160px;
+            position:absolute;
+            bottom:-10px;
+            left: -20px;
+            opacity:.3;
+        }
+         .img2{
+            width:320px;
+            height:230px;
+            position:absolute;
+            top:-10px;
+            left: 10px;
+            opacity:.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="city" id="city1">北京</button>
+        <button class="city" id="city2">上海</button>
+        <button class="city" id="city3">石家庄</button>
+        <button class="city" id="city4">太原</button>
+        <button class="city" id="city5">沈阳</button>
+        <button class="city" id="city6">天津</button>
+        <button class="city" id="city7">长春</button>
+        <button class="city" id="city8">哈尔滨</button>
+        <button class="city" id="city9">邯郸</button>
+        <button class="city" id="city10">重庆</button>
+        <button class="city" id="city11">南京</button>
+        <button class="city" id="city12">苏州</button>
+        <button class="city" id="city13">呼和浩特</button>
+        <button class="city" id="city14">杭州</button>
+        <button class="city" id="city15">宁波</button>
+        <button class="city" id="city16">大连</button>
+        <button class="city" id="city17">铜陵</button>
+        <button class="city" id="city18">合肥</button>
+        <button class="city" id="city19">福州</button>
+        <button class="city" id="city20">厦门</button>
+        <button class="city" id="city21">南昌</button>
+        <button class="city" id="city22">郑州</button>
+        <button class="city" id="city23">宜春</button>
+        <button class="city" id="city24">济南</button>
+        <button class="city" id="city25">泰安</button>
+        <button class="city" id="city26">青岛</button>
+        <button class="city" id="city27">武汉</button>
+        <button class="city" id="city28">长沙</button>
+        <button class="city" id="city29">宜昌</button>
+        <button class="city" id="city30">广州</button>
+        <button class="city" id="city31">深圳</button>
+        <button class="city" id="city32">南宁</button>
+        <button class="city" id="city33">海口</button>
+        <button class="city" id="city34">成都</button>
+        <button class="city" id="city35">广元</button>
+        <button class="city" id="city36">德阳</button>
+        <button class="city" id="city37">贵阳</button>
+        <button class="city" id="city38">昆明</button>
+        <button class="city" id="city39">拉萨</button>
+        <button class="city" id="city40">日喀则</button>
+        <button class="city" id="city41">西安</button>
+        <button class="city" id="city42">咸阳</button>
+        <button class="city" id="city43">兰州</button>
+        <button class="city" id="city44">西宁</button>
+        <button class="city" id="city45">银川</button>
+        <button class="city" id="city46">乌鲁木齐</button>
+    </div>
+    <div id="con"></div>    <!-- 存放所有pop的容器 -->
+    <img class="img1" src="../../static/image/2.gif">
+    <img class="img2" src="../../static/image/3.gif">
+    <div class="detail" onclick="goToDetail()"><p class="text">详情查看</p></div>
+    <div class="bottom">我也是有底线的</div>
+    <script>
+
+        // 创建小方块
+        function createItem (w=1, h=1, bgColor='red') {
+            let item = document.createElement('div')
+            item.style.width = w + 'rem'
+            item.style.height = h + 'rem'
+            item.style.backgroundColor = bgColor
+            item.style.zIndex = 9
+            item.style.position = 'absolute'
+            item.style.borderTop = '1px dashed black'
+            item.style.borderLeft = '1px dashed black'
+            item.style.transform = 'translate(-50%, -50%) rotate(45deg)'
+            item.style.left = '50%'
+            return item
+        }
+        // 创建弹窗方法
+        function createPop (w, h, deg, text) {
+            let pop = document.createElement('div')
+            pop.style.width = w + 'rem'
+            pop.style.height = h + 'rem'
+            pop.style.border = '1px dashed black'
+            pop.style.padding = '.6rem'
+            pop.style.transform = `rotate(-${deg}deg)`
+            pop.innerHTML = `
+            <div class="div">
+                <h3>【${text.city}】</h3>
+                <div class="kindContainer">
+                    <div class="kindCon">
+                        <span class="kind">☀${text.kind1}</span>
+                        <div class="kindNote">${text.kind1_note}</div>
+                    </div>
+                    <div class="kindCon">
+                        <span class="kind">❀${text.kind2}</span>
+                        <div class="kindNote">${text.kind2_note}</div>
+                    </div>
+                    <div class="kindCon">
+                        <span class="kind">✿${text.kind3}</span>
+                        <div class="kindNote">${text.kind3_note}</div>
+                    </div>
+                    <div class="kindCon">
+                        <span class="kind">‡${text.kind4}</span>
+                        <div class="kindNote">${text.kind4_note}</div>
+                    </div>
+                    <div class="kindCon">
+                        <span class="kind">☺${text.kind5}</span>
+                        <div class="kindNote">${text.kind5_note}</div>
+                    </div>
+                </div>
+            </div>
+            `
+            return pop
+        }
+        // 创建弹窗容器方法
+        function createPopContainer (w, h, left, top, deg) {
+            let pop_con = document.createElement('div')
+            pop_con.style.width = w + 'rem'
+            pop_con.style.height = h + 'rem'
+            pop_con.style.position = 'absolute'
+            //pop_con.style.display = 'none'
+            pop_con.style.transform = `rotate(${deg}deg)`
+            pop_con.style.top = top
+            pop_con.style.left = left
+            pop_con.style.textAlign = 'center'
+            return pop_con
+        }
+        function createPopWindow(btnEle, w, h, left, top, deg, text) {
+            const con = document.querySelector('#con')   // 存放所有pop的容器，不直接存在body中
+            // 绑定每一个弹框的按钮点击事件
+            const btnText = btnEle.innerText
+            const pop_con = createPopContainer(w, h, left, top, deg)
+            pop_con.setAttribute('id', `pop_con${btnText}`)
+            let pop
+            let item
+            btnEle.addEventListener('click', e => {
+                e.stopPropagation()
+
+                let pop_con_exit = document.querySelector(`#pop_con${btnText}`);
+                if (!pop_con_exit) {
+                    // 根据text发请求
+                    $.ajax({
+                        method: 'get',
+                        url: `http://127.0.0.1:8000/garbage/get?city=${text}`,
+                        success: data => {
+                            // 获取元素
+                            pop = createPop(w, h, deg, JSON.parse(data)[0].fields)  // 这里的data是请求来的数据对象
+                            pop.setAttribute('id', `pop${btnText}`)
+                            item = createItem()
+                            item.setAttribute('id', `item${btnText}`)
+                            pop_con.appendChild(item)
+                            pop_con.appendChild(pop)
+                            con.appendChild(pop_con)
+                            // 绑定弹框点击事件以及小方块，取消冒泡
+                            pop.addEventListener('click', e => e.stopPropagation())
+                            item.addEventListener('click', e => e.stopPropagation())
+                        },
+                        error: err => console.log(ere)
+                    })
+                }
+
+                // 绑定window点击事件，点击取消弹框的显示
+                //window.addEventListener('click', e => {
+                //    pop_con.style.display = 'none'
+                //    pop_con.removeChild(pop)
+                //    pop_con.removeChild(item)
+                //    con.removeChild(pop_con)
+                //    location.reload()
+                //})
+            })
+
+        }
+        // 给蒙版绑定点击事件，找出存放所有pop的容器
+        let container = document.querySelector('.container');
+        let con = document.querySelector('#con');
+        container.addEventListener('click', e => {
+            while(con.hasChildNodes()) //当div下还存在子节点时 循环继续，再循环继续删除子节点下面的子节点
+            {
+                while (con.firstChild.hasChildNodes()) {
+                    con.firstChild.removeChild(con.firstChild.firstChild);
+                }
+                con.removeChild(con.firstChild);
+            }
+        })
+
+        let btn1 = document.querySelector('#city1')
+        createPopWindow(btn1, '30', '30', '340px', '112px', '90', btn1.innerText)
+        let btn2 = document.querySelector('#city2')
+        createPopWindow(btn2, '30', '30', '680px', '40px', '180', btn2.innerText)
+        let btn3 = document.querySelector('#city3')
+        createPopWindow(btn3, '30', '30', '310px', '130px', '90', btn3.innerText)
+        let btn4 = document.querySelector('#city4')
+        createPopWindow(btn4, '30', '30', '295px', '150px', '90', btn4.innerText)
+        let btn5 = document.querySelector('#city5')
+        createPopWindow(btn5, '30', '30', '450px', '80px', '90', btn5.innerText)
+        let btn6 = document.querySelector('#city6')
+        createPopWindow(btn6, '30', '30', '400px', '150px', '90', btn6.innerText)
+        let btn7 = document.querySelector('#city7')
+        createPopWindow(btn7, '30', '30', '500px', '30px', '90', btn7.innerText)
+        let btn8 = document.querySelector('#city8')
+        createPopWindow(btn8, '32', '32', '490px', '-10px', '90', btn8.innerText)
+        let btn9 = document.querySelector('#city9')
+        createPopWindow(btn9, '30', '30', '300px', '162px', '90', btn9.innerText)
+        let btn10 = document.querySelector('#city10')
+        createPopWindow(btn10, '30', '30', '460px', '30px', '180', btn10.innerText)
+        let btn11 = document.querySelector('#city11')
+        createPopWindow(btn11, '32', '32', '380px', '220px', '90', btn11.innerText)
+        let btn12 = document.querySelector('#city12')
+        createPopWindow(btn12, '30', '30', '410px', '255px', '90', btn12.innerText)
+        let btn13 = document.querySelector('#city13')
+        createPopWindow(btn13, '32', '32', '280px', '70px', '90', btn13.innerText)
+        let btn14 = document.querySelector('#city14')
+        createPopWindow(btn14, '30', '30', '410px', '270px', '90', btn14.innerText)
+        let btn15 = document.querySelector('#city15')
+        createPopWindow(btn15, '30', '30', '430px', '280px', '90', btn15.innerText)
+        let btn16 = document.querySelector('#city16')
+        createPopWindow(btn16, '30', '30', '450px', '100px', '90', btn16.innerText)
+        let btn17 = document.querySelector('#city17')
+        createPopWindow(btn17, '30', '30', '380px', '245px', '90', btn17.innerText)
+        let btn18 = document.querySelector('#city18')
+        createPopWindow(btn18, '30', '30', '370px', '230px', '90', btn18.innerText)
+        let btn19 = document.querySelector('#city19')
+        createPopWindow(btn19, '30', '30', '630px', '110px', '180', btn19.innerText)
+        let btn20 = document.querySelector('#city20')
+        createPopWindow(btn20, '30', '30', '620px', '120px', '180', btn20.innerText)
+        let btn21 = document.querySelector('#city21')
+        createPopWindow(btn21, '30', '30', '605px', '45px', '180', btn21.innerText)
+        let btn22 = document.querySelector('#city22')
+        createPopWindow(btn22, '30', '30', '330px', '175px', '90', btn22.innerText)
+        let btn23 = document.querySelector('#city23')
+        createPopWindow(btn23, '30', '30', '580px', '60px', '180', btn23.innerText)
+        let btn24 = document.querySelector('#city24')
+        createPopWindow(btn24, '30', '30', '380px', '150px', '90', btn24.innerText)
+        let btn25 = document.querySelector('#city25')
+        createPopWindow(btn25, '30', '30', '390px', '170px', '90', btn25.innerText)
+        let btn26 = document.querySelector('#city26')
+        createPopWindow(btn26, '30', '30', '440px', '160px', '90', btn26.innerText)
+        let btn27 = document.querySelector('#city27')
+        createPopWindow(btn27, '30', '30', '570px', '20px', '180', btn27.innerText)
+        let btn28 = document.querySelector('#city28')
+        createPopWindow(btn28, '30', '30', '550px', '40px', '180', btn28.innerText)
+        let btn29 = document.querySelector('#city29')
+        createPopWindow(btn29, '30', '30', '530px', '23px', '180', btn29.innerText)
+        let btn30 = document.querySelector('#city30')
+        createPopWindow(btn30, '30', '30', '560px', '120px', '180', btn30.innerText)
+        let btn31 = document.querySelector('#city31')
+        createPopWindow(btn31, '30', '30', '590px', '125px', '180', btn31.innerText)
+        let btn32 = document.querySelector('#city32')
+        createPopWindow(btn32, '30', '30', '470px', '120px', '180', btn32.innerText)
+        let btn33 = document.querySelector('#city33')
+        createPopWindow(btn33, '30', '30', '505px', '150px', '180', btn33.innerText)
+        let btn34 = document.querySelector('#city34')
+        createPopWindow(btn34, '30', '30', '650px', '240px', '270', btn34.innerText)
+        let btn35 = document.querySelector('#city35')
+        createPopWindow(btn35, '30', '30', '680px', '215px', '270', btn35.innerText)
+        let btn36 = document.querySelector('#city36')
+        createPopWindow(btn36, '30', '30', '660px', '230px', '270', btn36.innerText)
+        let btn37 = document.querySelector('#city37')
+        createPopWindow(btn37, '30', '30', '445px', '85px', '180', btn37.innerText)
+        let btn38 = document.querySelector('#city38')
+        createPopWindow(btn38, '30', '30', '400px', '90px', '180', btn38.innerText)
+        let btn39 = document.querySelector('#city39')
+        createPopWindow(btn39, '30', '30', '500px', '255px', '270', btn39.innerText)
+        let btn40 = document.querySelector('#city40')
+        createPopWindow(btn40, '30', '30', '210px', '40px', '180', btn40.innerText)
+        let btn41 = document.querySelector('#city41')
+        createPopWindow(btn41, '30', '30', '260px', '190px', '90', btn41.innerText)
+        let btn42 = document.querySelector('#city42')
+        createPopWindow(btn42, '30', '30', '250px', '205px', '90', btn42.innerText)
+        let btn43 = document.querySelector('#city43')
+        createPopWindow(btn43, '30', '30', '200px', '155px', '90', btn43.innerText)
+        let btn44 = document.querySelector('#city44')
+        createPopWindow(btn44, '30', '30', '160px', '165px', '90', btn44.innerText)
+        let btn45 = document.querySelector('#city45')
+        createPopWindow(btn45, '30', '30', '220px', '125px', '90', btn45.innerText)
+        let btn46 = document.querySelector('#city46')
+        createPopWindow(btn46, '30', '30', '390px', '40px', '270', btn46.innerText)
+
+
+
+
+
+    </script>
+    <script>
+        function goToDetail () {
+            location.href = 'http://127.0.0.1:8000/garbage/details'
+        }
+    </script>
+</body>
+</html>

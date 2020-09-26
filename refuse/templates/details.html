@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    {% load static %}
+    <!--引入普通的css文件-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!--引入js文件-->
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        .firstRow {
+            color: #fff;
+            background-color: #444 !important;
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 4px #ccc;
+            text-align: center;
+        }
+        .firstRow td {
+            vertical-align: middle !important;
+        }
+        .aa{
+            margin-top:20px;
+        }
+        h1{
+            margin-left:550px;
+        }
+    </style>
+</head>
+<body>
+<h1>垃圾分类</h1>
+<button onclick="backToIndex()">◀</button>
+<table class="aa table table table-striped table table-bordered table table-hover table table-condensed table">
+        <tr class="firstRow">
+            <td>城市</td>
+            <td>种类1</td>
+            <td>种类1介绍</td>
+            <td>种类2</td>
+            <td>种类2介绍</td>
+            <td>种类3</td>
+            <td>种类3介绍</td>
+            <td>种类4</td>
+            <td>种类4介绍</td>
+            <td>种类5</td>
+            <td>种类5介绍</td>
+        </tr>
+        {% for e in detail %}
+            <tr>
+                <td>{{e.city}}</td>
+                <td>{{e.kind1}}</td>
+                <td>{{e.kind1_note}}</td>
+                <td>{{e.kind2}}</td>
+                <td>{{e.kind2_note}}</td>
+                <td>{{e.kind3}}</td>
+                <td>{{e.kind3_note}}</td>
+                <td>{{e.kind4}}</td>
+                <td>{{e.kind4_note}}</td>
+                <td>{{e.kind5}}</td>
+                <td>{{e.kind5_note}}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+<script>
+    function backToIndex() {
+        history.back()
+    }
+</script>
+</body>
+</html>
